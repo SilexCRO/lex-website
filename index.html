@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f4ecdd">
+<title>LEX the Husky — The pack is a little unhinged</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nunito:wght@500;600;700;800;900;1000&display=swap');
+:root{--paper:#f4ecdd;--ink:#20221e;--muted:#68685e;--orange:#8a5a36;--blue:#a9d0e8;--line:#d7cdbb;--white:#fffaf0;--green:#536b4d;--max:1160px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Nunito,system-ui,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}.topline{height:34px;background:var(--green);color:#fffaf0;display:flex;align-items:center;justify-content:center;font:11px 'DM Mono',monospace;letter-spacing:.08em}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:1000;letter-spacing:-.05em}.paw{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--orange);font-size:19px;transform:rotate(-10deg)}.brand-logo{width:44px;height:44px;object-fit:cover;border-radius:50%;border:1px solid var(--line)}.links{display:flex;gap:27px;font-size:13px;font-weight:800}.socials{display:flex;align-items:center;gap:8px;margin-right:18px}.social-link{width:32px;height:32px;display:grid;place-items:center;overflow:hidden;border-radius:8px;background:#404549;border:1px solid var(--line);transition:transform .2s}.social-link:hover{transform:translateY(-2px)}.social-link img{width:100%;height:100%;object-fit:contain}.social-link.discord{background:var(--white)}.social-link.discord img{width:21px;height:21px}.nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:9px;background:var(--ink);color:var(--white);font-weight:900;font-size:13px;transition:.2s;box-shadow:3px 3px 0 var(--orange)}.nav-cta:hover,.button:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--orange)}.hero{min-height:565px;display:grid;grid-template-columns:1fr .88fr;align-items:center;gap:28px;padding:48px 0 63px}.eyebrow,.label{font:11px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.09em;color:var(--green)}.eyebrow:before{content:'✳';color:var(--orange);font-size:16px;margin-right:9px}.hero h1{font-size:clamp(56px,7.4vw,96px);line-height:.88;letter-spacing:-.085em;margin:20px 0}.hero h1 em{font-style:normal;color:var(--orange);display:block}.hero p{max-width:450px;font-size:18px;line-height:1.5;font-weight:700;color:#55564e}.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:27px}.button.orange{background:var(--orange);box-shadow:3px 3px 0 var(--ink)}.button.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink);box-shadow:none}.ticker{font:11px 'DM Mono',monospace;color:var(--muted);margin-top:25px}.ticker b{color:var(--ink)}.hero-art{position:relative;min-height:420px;display:flex;align-items:center;justify-content:center}.sun{position:absolute;width:min(390px,90%);aspect-ratio:1;border-radius:50%;background:var(--blue);border:1.5px solid var(--ink);right:8%;top:4%;}.dogframe{position:relative;width:min(420px,100%);height:390px;overflow:hidden;border-radius:48% 48% 22px 22px;border:1.5px solid var(--ink);background:#c2d6d4;transform:rotate(2deg);box-shadow:9px 9px 0 var(--ink)}.dogframe img{height:100%;width:100%;object-fit:cover;object-position:50% 40%;mix-blend-mode:multiply}.tag{position:absolute;background:var(--white);border:1px solid var(--ink);padding:11px 14px;font-weight:1000;font-size:13px;box-shadow:3px 3px var(--ink);transform:rotate(-5deg);z-index:2}.tag.one{right:-3px;top:60px}.tag.two{left:0;bottom:39px;transform:rotate(4deg);background:#ffe28a}.scribble{position:absolute;font-size:43px;color:var(--orange);right:10px;bottom:22px;transform:rotate(18deg)}.strip{background:#e8decb;border-block:1px solid var(--line);padding:14px 0;overflow:hidden;white-space:nowrap;font:12px 'DM Mono',monospace;letter-spacing:.08em}.strip span{margin:0 23px}.strip b{color:var(--orange)}section{padding:87px 0}.intro{display:grid;grid-template-columns:.7fr 1fr;gap:90px;align-items:start}.stamp{font-size:68px;color:var(--orange);line-height:1}.intro h2,.sectionhead h2{font-size:clamp(38px,5vw,60px);line-height:.98;letter-spacing:-.07em;margin:12px 0}.intro p{font-size:20px;line-height:1.55;font-weight:700;max-width:610px}.aside-note{color:var(--muted);font-size:14px!important}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:35px}.stat{padding:18px;background:var(--white);border:1px solid var(--line);border-radius:12px}.stat small{font:10px 'DM Mono',monospace;color:var(--muted);text-transform:uppercase}.stat strong{display:block;font-size:22px;margin-top:6px}.dark{background:var(--ink);color:var(--white)}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:34px}.sectionhead h2{max-width:630px}.sectionhead p{max-width:300px;color:#b5b3a6;line-height:1.5}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{padding:23px;border:1px solid #51534b;border-radius:14px;min-height:225px;display:flex;flex-direction:column;justify-content:space-between}.card .num{font:11px 'DM Mono',monospace;color:#d5aa70}.card h3{font-size:23px;letter-spacing:-.04em;margin:18px 0 8px}.card p{color:#b5b3a6;line-height:1.5;margin:0}.status{display:inline-block;align-self:flex-start;border-radius:20px;padding:6px 9px;background:#334831;color:#cde0b9;font:10px 'DM Mono',monospace;text-transform:uppercase}.status.planned{background:#514834;color:#f0d99d}.token{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.token h2{font-size:clamp(42px,5vw,62px);line-height:.95;letter-spacing:-.07em}.token p{color:var(--muted);line-height:1.55;font-weight:700}.contract{margin-top:25px;padding:15px;border:1px dashed #99907f;border-radius:10px;font:12px 'DM Mono',monospace;display:flex;justify-content:space-between;gap:12px;align-items:center}.contract button{background:none;border:0;color:var(--orange);font:inherit;cursor:pointer}.contract span{overflow-wrap:anywhere}.disclaimer{font-size:11px!important;font-weight:500!important}.join{background:var(--orange);border-radius:18px;padding:55px;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;overflow:hidden}.join:after{content:'✳';position:absolute;font-size:230px;right:30%;top:-75px;opacity:.13}.join h2{font-size:clamp(38px,5vw,60px);line-height:.94;letter-spacing:-.07em;margin:0;max-width:560px}.join .button{background:var(--ink);position:relative;z-index:1;white-space:nowrap}footer{padding:35px 0 45px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font:11px 'DM Mono',monospace}.footlinks{display:flex;gap:18px}.mobile{display:none}
+@media(max-width:760px){.wrap{width:calc(100% - 34px)}.topline{font-size:9px}.nav{height:64px}.brand-logo{width:36px;height:36px}.links{display:none}.socials{gap:5px;margin-right:9px}.social-link{width:28px;height:28px}.social-link.discord img{width:18px;height:18px}.nav-cta{padding:10px 13px;font-size:11px}.hero{grid-template-columns:1fr;gap:4px;padding:42px 0 46px}.hero h1{font-size:70px}.hero p{font-size:16px}.hero-art{min-height:340px}.sun{width:280px;right:8%;top:4%}.dogframe{height:310px;width:min(350px,90%)}.tag.one{right:0;top:40px}.intro,.token{grid-template-columns:1fr;gap:20px}.intro{gap:15px}.stamp{font-size:48px}.intro p{font-size:17px}.stats{grid-template-columns:1fr}.stat{display:flex;justify-content:space-between;align-items:center}.stat strong{font-size:17px;margin:0}.sectionhead{display:block}.sectionhead p{margin-top:15px}.cards{grid-template-columns:1fr}.card{min-height:180px}section{padding:62px 0}.token{gap:5px}.token h2{margin:10px 0}.join{padding:34px 25px;display:block}.join .button{margin-top:25px}.join:after{right:-4%;font-size:160px}footer{align-items:flex-start;gap:20px;flex-direction:column}.footlinks{flex-wrap:wrap}.contract{font-size:10px}}
+
+/* Cronos blue is a site-wide brand color, balanced with Lex's warm brown. */
+:root{--cronos:#1677b8;--cronos-dark:#105a8c;--cronos-pale:#dceef8}
+.topline{background:var(--cronos-dark)}
+.paw{background:var(--cronos)}
+.nav-cta{box-shadow:3px 3px 0 var(--cronos)}
+.nav-cta:hover{box-shadow:5px 5px 0 var(--cronos)}
+.button.orange{background:var(--cronos);box-shadow:3px 3px 0 var(--cronos-dark)}
+.button.orange:hover{box-shadow:5px 5px 0 var(--cronos-dark)}
+.eyebrow:before,.ticker b,.strip b,.scribble{color:var(--cronos)}
+.sun{background:linear-gradient(145deg,#c6e2f2 0%,#a9d0e8 100%);border-color:var(--cronos)}
+.tag.one{border-top:3px solid var(--cronos)}
+.strip{background:var(--cronos-pale);border-color:#bad8e8}
+.stat:first-child{border-top:3px solid var(--cronos)}
+.status{background:#dceef8;color:#105a8c}
+.status:before{background:#1677b8}
+.card:nth-child(1) .num,.card:nth-child(3) .num{color:#9ccff0}
+.contract{border-color:#4c87aa}
+.contract a{color:#9ccff0}
+footer a:hover,.links a:hover{color:var(--cronos-dark)}
+
+.site-footer{display:block;width:100%;margin-top:0;padding:0;background:#17252e;color:#fffaf0;border-top:4px solid var(--cronos)}
+.footer-inner{width:min(1160px,calc(100% - 48px));margin:auto;padding:27px 0 22px}
+.footer-top{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-bottom:22px;border-bottom:1px solid #41515a}
+.footer-brand{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:1000;letter-spacing:.02em;white-space:nowrap}
+.footer-brand img{width:34px;height:34px;border-radius:50%;object-fit:cover}
+.footer-links,.footer-socials{display:flex;align-items:center;gap:20px}
+.footer-links{font-size:13px;font-weight:800}
+.footer-socials{gap:8px}
+.footer-socials .social-link{width:29px;height:29px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:17px;color:#c2c9c9;font:10px 'DM Mono',monospace;letter-spacing:.04em}
+.footer-credit{display:flex;align-items:center;gap:12px;white-space:nowrap}
+.footer-credit strong{color:#fffaf0;font:900 12px Nunito,system-ui,sans-serif;letter-spacing:0}
+.footer-credit-sep{width:1px;height:18px;background:#53636d}
+.cronos-credit{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:7px;background:#105a8c;color:#dceef8;font:10px 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+.cronos-credit img{display:block;width:73px;height:auto}
+.site-footer a:hover{color:#9ed7f7}
+@media(max-width:720px){.footer-inner{width:calc(100% - 34px);padding:23px 0 19px}.footer-top{align-items:flex-start;flex-wrap:wrap;gap:18px}.footer-links{order:3;width:100%;gap:19px;flex-wrap:wrap}.footer-bottom{align-items:flex-start;flex-direction:column}.footer-credit{align-self:flex-end}}
+
+.burn-meter{margin-top:14px;padding:17px 18px 14px;border:1px solid #bad8e8;border-radius:12px;background:linear-gradient(120deg,#edf7fc,#fffaf0)}
+.burn-meter-head{display:flex;align-items:end;justify-content:space-between;gap:16px}
+.burn-meter-head>div{display:flex;flex-direction:column;gap:4px}
+.burn-kicker{font:10px 'DM Mono',monospace;letter-spacing:.09em;color:var(--cronos-dark)}
+#lex-burn-percent{font-size:26px;line-height:1;letter-spacing:-.05em;color:var(--cronos-dark)}
+.burn-amount{font-size:13px;font-weight:900;text-align:right}
+.burn-track{height:13px;margin:14px 0 9px;background:#d7e4e7;border:1px solid #bed1d7;border-radius:20px;overflow:hidden}
+.burn-fill{height:100%;width:0;background:linear-gradient(90deg,#1677b8,#54b3e7);border-radius:inherit;transition:width .7s ease}
+.burn-meter-foot{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font:10px 'DM Mono',monospace}
+.burn-meter.unavailable .burn-fill{background:#adb7b9}
+@media(max-width:680px){.burn-meter-head{align-items:flex-start;flex-direction:column;gap:8px}.burn-amount{text-align:left}.burn-meter-foot{flex-direction:column;gap:4px}}
+.burn-list{margin-top:12px;padding:17px 18px 15px;border:1px solid #e0d3c2;border-radius:12px;background:#fffaf0}
+.burn-list-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:8px}
+.burn-list-head h3{margin:0;font-size:16px;letter-spacing:-.03em}
+.burn-list-head small{display:block;margin-top:2px;color:var(--muted);font:10px 'DM Mono',monospace}
+.burn-show-all{flex:none;color:var(--cronos-dark);font-size:12px;font-weight:900;text-decoration:none;border:1px solid #bad8e8;border-radius:7px;padding:8px 10px}
+.burn-show-all:hover{background:#dceef8}
+.burn-txns{list-style:none;margin:0;padding:0}
+.burn-txn{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid #eee5d8}
+.burn-txn strong{font-size:14px}
+.burn-txn a{color:var(--cronos-dark);font:11px 'DM Mono',monospace;text-decoration:none}
+.burn-txn a:hover{text-decoration:underline}
+.burn-list-state{padding:12px 0 4px;color:var(--muted);font-size:13px}
+@media(max-width:520px){.burn-list-head{align-items:flex-start}.burn-list{padding:15px}.burn-txn{align-items:flex-start}}
+</style></head>
+<body>
+<div class="topline">CRONOS PACK CHECK-IN &nbsp;·&nbsp; LEX HAS DEFINITELY CHEWED THE ROADMAP</div>
+<header class="wrap nav"><a class="brand" href="#top"><img class="brand-logo" src="assets/lex-logo.png" alt=""> LEX THE HUSKY</a><nav class="links"><a href="#story">The story</a><a href="ecosystem/">Ecosystem</a><a href="#token">$LEX</a><a href="roadmap/">Roadmap</a><a href="whitepaper/">Whitepaper</a><a href="dao/">DAO</a></nav><div class="socials" aria-label="Social media"><a class="social-link x-link" href="https://x.com/lexthehusky" target="_blank" rel="noopener noreferrer" aria-label="LEX on X"><img src="assets/x-logo.png" alt=""></a><a class="social-link discord" href="https://discord.gg/VgczdxurgU" target="_blank" rel="noopener noreferrer" aria-label="LEX on Discord"><img src="assets/discord-logo.png" alt=""></a></div><a class="nav-cta" href="https://lexthehusky.com/swap">BUY $LEX ↗</a></header>
+<main id="top"><div class="wrap hero"><div><div class="eyebrow">A real husky. A very online pack.</div><h1>LOYAL TO<br>THE PACK.<em>CHAOS<br>BY NATURE.</em></h1><p>Meet Lex: professional howler, amateur rule-follower. Now running wild on Cronos as $LEX.</p><div class="actions"><a class="button orange" href="https://lexthehusky.com/swap">Buy $LEX ↗</a><a class="button ghost" href="https://lexthehusky.com/community">Join the pack ↗</a><a class="button ghost" href="https://lexthehusky.com/how-to-buy">How to buy ↓</a></div><div class="ticker"><b>$LEX</b> &nbsp;·&nbsp; ON CRONOS &nbsp;·&nbsp; NO PROMISES, JUST PAWS</div></div><div class="hero-art"><div class="sun"></div><div class="dogframe"><img src="https://lexthehusky.com/images/lex-hero.jpg" alt="Lex, the real Siberian husky behind $LEX"></div><span class="tag one">CEO OF ZOOMIES</span><span class="tag two">GOOD BOY. BAD LISTENER.</span><span class="scribble">✳</span></div></div>
+<div class="strip"><span>LOYAL BY DEFAULT</span><b>✳</b><span>CHAOS BY DESIGN</span><b>✳</b><span>BUILT ON CRONOS</span><b>✳</b><span>LOYAL BY DEFAULT</span><b>✳</b><span>CHAOS BY DESIGN</span><b>✳</b><span>BUILT ON CRONOS</span></div>
+<section id="story"><div class="wrap intro"><div><div class="label">01 / Meet the husky</div><div class="stamp">Awooo!</div><h2>Not a boardroom.<br>A dog with opinions.</h2></div><div><p>$LEX started with Lex, a real Siberian Husky. He’s loyal to his people, powered by mischief, and not especially interested in your five-step plan.</p><p class="aside-note">The coin is on Cronos. The dog is still in charge. We’re building a pack that can laugh at itself and see what we can make together.</p><div class="stats"><div class="stat"><small>Total supply</small><strong id="lex-total-supply">6B $LEX</strong></div><div class="stat"><small>Burned supply</small><strong id="lex-burned-supply">Loading…</strong></div><div class="stat"><small>Buy / sell tax</small><strong>0%</strong></div></div><div class="burn-meter" aria-live="polite"><div class="burn-meter-head"><div><span class="burn-kicker">ON-CHAIN BURN TRACKER</span><strong id="lex-burn-percent">Reading Cronos…</strong></div><span id="lex-burn-amount" class="burn-amount">Checking dead-wallet balance</span></div><div class="burn-track"><div id="lex-burn-fill" class="burn-fill" role="progressbar" aria-label="$LEX burned from total supply" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div><div class="burn-meter-foot"><span>Burn address balance ÷ total supply</span><span id="lex-burn-updated">Connecting to Cronos</span></div></div><div class="burn-list"><div class="burn-list-head"><div><h3>Fresh pawprints 🔥</h3><small>Latest $LEX burns on Cronos</small></div><a class="burn-show-all" href="https://lexthehusky.com/burn-center">Show all ↗</a></div><ul id="lex-burn-txns" class="burn-txns" aria-live="polite"><li class="burn-list-state">Fetching the latest burns…</li></ul></div></div></div></section>
+<section class="dark" id="pack"><div class="wrap"><div class="sectionhead"><div><div class="label" style="color:#d5aa70">02 / The pack in progress</div><h2>Good dogs.<br>Unfinished plans.</h2></div><p>Here’s what the current site says is live, and what’s still in the dog-eared notebook.</p></div><div class="cards"><article class="card"><span class="status">Live</span><div><span class="num">01 — THE TOKEN</span><h3>$LEX on Cronos</h3><p>Launched October 29, 2024. Token buy/sell tax: 0%.</p></div></article><article class="card"><span class="status">Live</span><div><span class="num">02 — THE STAKING</span><h3>Put your tokens to work</h3><p>Staking is available for $LEX and OG Pass holders.</p></div></article><article class="card"><span class="status">Live</span><div><span class="num">03 — THE OG PASS</span><h3>OG Passes</h3><p>The collection is live, with staking for holders.</p></div></article><article class="card"><span class="status planned">Planned</span><div><span class="num">04 — HUSKYWORLD</span><h3>A world to run around in</h3><p>Planned game ecosystem with $SLG utility and in-game burns.</p></div></article></div></div></section>
+<section id="token"><div class="wrap token"><div><div class="label">03 / The useful bits</div><h2>Follow the pawprints.</h2><p>$LEX lives on Cronos. Verify the contract before you buy. The website swap adds a 5% ecosystem-support fee; the how-to guide explains alternatives.</p><a class="button orange" href="https://lexthehusky.com/how-to-buy">How to buy $LEX ↗</a></div><div><div class="contract"><span>0x25B7449E2416e0Ef0f244f6cC34eb31C4902d9Cb<br><small>$LEX · Cronos</small></span><a href="https://lexthehusky.com/">View official site ↗</a></div><p class="disclaimer">Meme coins are volatile and can lose value. Nothing here is financial advice. Verify contract details and current figures on official channels before taking action.</p></div></div></section>
+<section><div class="wrap"><div class="join"><h2>Pack’s better<br>when it’s a little loud.</h2><a class="button" href="https://lexthehusky.com/community">Find your people ↗</a></div></div></section></main>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-top"><a class="footer-brand" href="#top"><img src="assets/lex-logo.png" alt="">LEX THE HUSKY</a><nav class="footer-links" aria-label="Footer navigation"><a href="roadmap/">Roadmap</a><a href="whitepaper/">Whitepaper</a><a href="dao/">DAO</a><a href="privacy-policy/">Privacy Policy</a><a href="terms-of-service/">Terms of Service</a><a href="https://lexthehusky.com/community">Community</a></nav><nav class="footer-socials" aria-label="Social media"><a class="social-link x-link" href="https://x.com/lexthehusky" target="_blank" rel="noopener noreferrer" aria-label="LEX on X"><img src="assets/x-logo.png" alt=""></a><a class="social-link discord" href="https://discord.gg/VgczdxurgU" target="_blank" rel="noopener noreferrer" aria-label="LEX on Discord"><img src="assets/discord-logo.png" alt=""></a></nav></div><div class="footer-bottom"><span>© 2026 LEX THE HUSKY · MADE WITH TREATS & QUESTIONABLE IMPULSE CONTROL</span><div class="footer-credit"><span>Built by <strong>Silex</strong></span><span class="footer-credit-sep" aria-hidden="true"></span><span class="cronos-credit"><span>On</span><img src="assets/cronos-wordmark-light.png" alt="Cronos"></span></div></div></div></footer>
+
+<script>
+(()=>{
+ const TOKEN='0x25B7449E2416e0Ef0f244f6cC34eb31C4902d9Cb';
+ const DEAD='0x000000000000000000000000000000000000dEaD';
+ const RPCS=['https://cronos-evm-rpc.publicnode.com','https://evm.cronos.com'];
+ const TRANSFER='0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef';
+ const EXPLORER='https://explorer.cronos.org/tx/';
+ const box=document.querySelector('.burn-meter');
+ if(!box)return;
+ const byId=id=>document.getElementById(id);
+ const number=n=>new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(n);
+ async function call(data){
+  let lastError;
+  for(const endpoint of RPCS){
+   const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),7000);
+   try{
+    const res=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',method:'eth_call',params:[{to:TOKEN,data},'latest'],id:1}),cache:'no-store',signal:controller.signal});
+    if(!res.ok)throw Error('RPC HTTP '+res.status);
+    const json=await res.json();if(json.error||!json.result)throw Error('RPC returned no result');
+    return BigInt(json.result);
+   }catch(error){lastError=error}finally{clearTimeout(timeout)}
+  }
+  throw lastError||Error('Cronos RPC unavailable');
+ }
+ async function rpc(method,params){
+  let lastError;
+  for(const endpoint of RPCS){
+   const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),9000);
+   try{
+    const res=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',method,params,id:2}),cache:'no-store',signal:controller.signal});
+    if(!res.ok)throw Error('RPC HTTP '+res.status);
+    const json=await res.json();if(json.error)throw Error(json.error.message||'RPC request failed');return json.result;
+   }catch(error){lastError=error}finally{clearTimeout(timeout)}
+  }
+  throw lastError||Error('Cronos RPC unavailable');
+ }
+ function formatLex(raw,decimals){
+  const unit=10n**BigInt(decimals),whole=raw/unit;
+  const fraction=(raw%unit).toString().padStart(decimals,'0').replace(/0+$/,'').slice(0,4);
+  return number(whole)+(fraction?'.'+fraction:'');
+ }
+ async function loadBurnTransactions(){
+  const list=byId('lex-burn-txns');if(!list)return;
+  try{
+   const [headHex,decimalsRaw]=await Promise.all([rpc('eth_blockNumber',[]),call('0x313ce567')]);
+   const head=Number(BigInt(headHex)),decimals=Number(decimalsRaw);
+   if(!Number.isSafeInteger(head)||decimals<0||decimals>36)throw Error('Unexpected Cronos response');
+   const deadTopic='0x'+DEAD.slice(2).toLowerCase().padStart(64,'0');let logs=[];
+   for(let end=head;end>=Math.max(0,head-300000)&&logs.length<5;end-=10000){
+    const start=Math.max(0,end-9999);
+    const part=await rpc('eth_getLogs',[{fromBlock:'0x'+start.toString(16),toBlock:'0x'+end.toString(16),address:TOKEN,topics:[TRANSFER,null,deadTopic]}]);
+    logs=logs.concat(part||[]);
+   }
+   logs.sort((a,b)=>Number(BigInt(b.blockNumber)-BigInt(a.blockNumber)));
+   logs=logs.slice(0,5);
+   if(!logs.length){list.innerHTML='<li class="burn-list-state">No recent burn transactions found. Check the Burn Center for the full history.</li>';return;}
+   list.innerHTML=logs.map(log=>{
+    const amount=formatLex(BigInt(log.data),decimals),hash=log.transactionHash;
+    return '<li class="burn-txn"><strong>'+amount+' $LEX</strong><a href="'+EXPLORER+hash+'" target="_blank" rel="noopener noreferrer" aria-label="View burn transaction '+hash+'">View tx ↗</a></li>';
+   }).join('');
+  }catch(error){list.innerHTML='<li class="burn-list-state">Burn history is temporarily unavailable. <a href="https://lexthehusky.com/burn-center">Visit the Burn Center ↗</a></li>';}
+ }
+ async function refresh(){
+  try{
+   const padded=DEAD.slice(2).toLowerCase().padStart(64,'0');
+   const [rawBurned,rawSupply,rawDecimals]=await Promise.all([call('0x70a08231'+padded),call('0x18160ddd'),call('0x313ce567')]);
+   const decimals=Number(rawDecimals);if(decimals<0||decimals>36)throw Error('Unexpected token decimals');
+   const unit=10n**BigInt(decimals);const burned=rawBurned/unit;const supply=rawSupply/unit;
+   if(supply===0n)throw Error('Token supply is zero');
+   const hundredths=Number((rawBurned*10000n)/rawSupply);const percent=(hundredths/100).toFixed(2);
+   byId('lex-total-supply').textContent=number(supply)+' $LEX';
+   byId('lex-burned-supply').textContent=number(burned)+' $LEX';
+   byId('lex-burn-amount').textContent=number(burned)+' $LEX burned';
+   byId('lex-burn-percent').textContent=percent+'% burned';
+   const fill=byId('lex-burn-fill');fill.style.width=Math.min(hundredths/100,100)+'%';fill.setAttribute('aria-valuenow',percent);
+   byId('lex-burn-updated').textContent='Updated '+new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit'});
+   box.classList.remove('unavailable');
+  }catch(error){
+   byId('lex-burn-percent').textContent='Live data unavailable';
+   byId('lex-burn-amount').innerHTML='Check the <a href="https://lexthehusky.com/burn-center">LEX Burn Center</a>';
+   byId('lex-burn-updated').textContent='Could not reach Cronos';box.classList.add('unavailable');
+  }
+ }
+ refresh();loadBurnTransactions();window.setInterval(refresh,60000);
+})();
+</script>
+</body></html>
+
+
+
+
+
