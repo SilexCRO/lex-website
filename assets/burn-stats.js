@@ -35,26 +35,35 @@
       const decimals = Number(BigInt(rawDecimals));
       const supply = BigInt(rawSupply), balance = BigInt(rawBurned);
       if (!Number.isInteger(decimals) || decimals < 0 || decimals > 36 || supply <= 0n || balance > supply) throw new Error('Invalid token values');
-      return { supply, balance, unit: 10n ** BigInt(decimals) };
+      return { supply, balance, unit: 10n ** BigInt(decimals), block };
     } finally { clearTimeout(timeout); }
   }
   async function refresh() {
     for (const endpoint of endpoints) {
       try {
-        const { supply, balance, unit } = await snapshot(endpoint);
+        const { supply, balance, unit, block } = await snapshot(endpoint);
         total.textContent = number.format(supply / unit) + ' $LEX';
         burned.textContent = number.format(balance / unit) + ' $LEX';
         percent.textContent = (Number(balance * 10000n / supply) / 100).toFixed(2) + '%';
-        note.textContent = originalNote;
+        const pct = Number(balance * 10000n / supply) / 100;
+        const fill = document.getElementById('lex-burn-fill');
+        const progress = document.getElementById('lex-burn-progress');
+        if (fill) fill.style.width = pct + '%';
+        if (progress) progress.setAttribute('aria-valuenow', pct.toFixed(2));
+        note.textContent = 'Updated ' + new Date().toLocaleTimeString('en-GB') + ' · Cronos block ' + BigInt(block).toLocaleString('en-US') + ' · refreshes every 60 seconds.';
         return;
       } catch { /* Try the other public endpoint. */ }
     }
     burned.textContent = 'Unavailable';
     percent.textContent = 'Unavailable';
+    const fill = document.getElementById('lex-burn-fill');
+    const progress = document.getElementById('lex-burn-progress');
+    if (fill) fill.style.width = '0%';
+    if (progress) progress.removeAttribute('aria-valuenow');
     note.replaceChildren(document.createTextNode('Live data is temporarily unavailable. '));
     const link = document.createElement('a');
-    link.href = 'https://lexthehusky.com/burn-center';
-    link.textContent = 'View the Burn Center';
+    link.href = 'https://explorer.cronos.com/token/' + token;
+    link.textContent = 'Check the token on Cronos Explorer';
     note.append(link);
   }
   refresh();
