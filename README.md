@@ -1,55 +1,75 @@
-# LEX the Husky website
+# LEX The Husky website
 
-The LEX the Husky website. The owner's page structure, wording, project statuses
-and links were synchronized with https://lexthehusky.com/ on 14 October 2026,
-while keeping the existing LEX visual style and blue brand palette.
+The complete LEX website from preview version 18, published on 21 October 2026:
+[live preview](https://lex-the-husky-preview.bloodybelgian.chatgpt.site/?rev=18).
 
-This is a static HTML website. No installation or build step is required.
+This is static HTML, CSS and JavaScript. No package installation or build step is
+required. Deploy the repository root on a static host with directory index pages.
+Root-relative paths such as `/assets/site.css` assume hosting at the domain root.
 
 ## Pages
 
-- Home: `/`
-- Ecosystem: `/ecosystem/`
-- DAO: `/dao/`
-- Roadmap: `/roadmap/`
-- Whitepaper: `/whitepaper/`
-- Community: `/community/`
-- Privacy policy: `/privacy-policy/`
-- Terms of service: `/terms-of-service/`
+| Page | Route | Current behavior |
+| --- | --- | --- |
+| Home | `/` | Brand, ecosystem and live burn statistics/history |
+| Ecosystem | `/ecosystem/` | Project overview and internal page links |
+| Swap | `/swap/` | UI preview; wallet connection/trading disabled |
+| How to buy | `/how-to-buy/` | Wallet/network guide and address copy |
+| Token staking | `/staking/` | Stake/unstake preview; wallet actions disabled |
+| OG Pass | `/og-pass/` | Collection information and official marketplace link |
+| OG Pass staking | `/staking/nft/` | NFT staking preview; wallet actions disabled |
+| OG Pass staking alias | `/og-pass-staking/` | Internal redirect to `/staking/nft/` |
+| HuskyWorld | `/huskyworld/` | Planned concept; no playable/downloadable game |
+| Burn Center | `/burn-center/` | Read-only Cronos metrics and recent transfers |
+| DAO | `/dao/` | Rules/context; voting links to the existing DAO |
+| Roadmap | `/roadmap/` | Existing ecosystem and five proposed, DAO-gated steps |
+| Community | `/community/` | Official links and team/project information |
+| Whitepaper | `/whitepaper/` | Key facts; PDF links to the official document |
+| Privacy | `/privacy-policy/` | Basic privacy policy |
+| Terms | `/terms-of-service/` | Basic terms of service |
 
-All images, shared styles (`site.css`) and the read-only live burn statistics
-script (`burn-stats.js`) are in `assets/`.
+## Integration handoff
 
-Swap, buying instructions, staking, NFT staking, OG Pass, HuskyWorld, Burn Center
-and the whitepaper PDF link to the owner's working website. The local DAO page
-contains the owner's voting rules and links to the live DAO for current proposals
-and wallet voting. Proposal totals are not copied into a static snapshot.
+Read [CLAUDE.md](CLAUDE.md), then [the technical handoff](docs/INTEGRATION_HANDOFF.md).
+The [ready-to-use Claude prompt](docs/CLAUDE_INTEGRATION_PROMPT.md) explains the task.
+
+Staking/NFT pool addresses, swap routing, ABIs and wallet wiring are **not included**.
+Use the colleague's working integration and verified deployment configuration.
+The previews are not completed contract integrations.
 
 ## Preview locally
 
-Serve this directory with a local web server. If Python is installed:
+Serve this directory with a static web server, for example:
 
 ```sh
 python -m http.server 8080
 ```
 
-Then open `http://localhost:8080`.
+Open `http://localhost:8080`. Opening HTML directly from disk is not representative
+because the site uses root-relative URLs.
 
-## Hosting
+## Files and data
 
-Deploy the repository root to a static host that supports directory index pages.
-No build command is needed; the publish directory is the repository root.
+- `assets/site.css`: shared brand, navigation, footer and retained page styles.
+- `assets/pages.css`: swap, guide, staking, OG Pass, HuskyWorld and burn layouts.
+- `assets/site-ui.js`: local preview interactions only; no wallet calls.
+- `assets/burn-stats.js`: read-only supply/dead-wallet metrics every 60 seconds.
+- `assets/burn-history.js`: up to five transfers from the latest 50,000 confirmed
+  blocks, checked every five minutes. This is a bounded recent scan, not an
+  all-time index. The explorer provides older history.
+- Images are local; WebP copies are used for the new OG Pass and HuskyWorld art.
+- Google Fonts and public Cronos RPC endpoints are external dependencies.
 
-Images are hosted locally. Google Fonts and the public Cronos RPC endpoints are
-external dependencies. The burn statistics refresh once a minute and show an
-unavailable state with a Burn Center link if both endpoints fail.
+No secrets, contract source/deployments, Sites credentials/hosting identity or
+duplicate `dist/` output are included.
 
-## Source
+## Source and validation
 
-Originally exported from the LEX the Husky Sites source at commit
-`aed4766e2f35f84eb9b9232b19f78a3ed6912b07`. The owner's public pages are the
-reference for the current copy and ordering. The previously removed archived
-ProsperaCraft project remains omitted.
+Website files match Sites source commit
+`bd14d00f62a33571008b8e860d89b83c3d3d5693`, published as preview version 18.
+This GitHub export adds the integration documentation.
 
-This repository contains the website files and does not include Sites-specific
-hosting metadata or generated duplicate output.
+The preview was checked on desktop and at 390px mobile width: migrated routes,
+internal links, images, menu stability, UI tabs and live burn metrics. JavaScript
+syntax checks passed. Transaction signing/staking was not tested because wallet
+integrations are not present. The removed archived project remains omitted.
