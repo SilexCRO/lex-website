@@ -1,10 +1,10 @@
 # LEX The Husky website
 
-The complete LEX website from preview version 18, published on 21 October 2026:
-[live preview](https://lex-the-husky-preview.bloodybelgian.chatgpt.site/?rev=18).
+This repository builds on [LEX website preview version 18](https://lex-the-husky-preview.bloodybelgian.chatgpt.site/?rev=18),
+published on 21 October 2026.
 
 This is static HTML, CSS and JavaScript. No package installation or build step is
-required. Deploy the repository root on a static host with directory index pages.
+required for the website. Deploy on a static host with directory index pages.
 Root-relative paths such as `/assets/site.css` assume hosting at the domain root.
 
 ## Pages
@@ -16,6 +16,7 @@ Root-relative paths such as `/assets/site.css` assume hosting at the domain root
 | Swap | `/swap/` | UI preview; wallet connection/trading disabled |
 | How to buy | `/how-to-buy/` | Wallet/network guide and address copy |
 | Token staking | `/staking/` | Stake/unstake preview; wallet actions disabled |
+| LP Farm | `/lp-farm/` | Obsidian LEX/WCRO LP farm; wallet actions await the verified Cronos deployment |
 | OG Pass | `/og-pass/` | Collection information and official marketplace link |
 | OG Pass staking | `/staking/nft/` | NFT staking preview; wallet actions disabled |
 | OG Pass staking alias | `/og-pass-staking/` | Internal redirect to `/staking/nft/` |
@@ -33,9 +34,11 @@ Root-relative paths such as `/assets/site.css` assume hosting at the domain root
 Read [CLAUDE.md](CLAUDE.md), then [the technical handoff](docs/INTEGRATION_HANDOFF.md).
 The [ready-to-use Claude prompt](docs/CLAUDE_INTEGRATION_PROMPT.md) explains the task.
 
-Staking/NFT pool addresses, swap routing, ABIs and wallet wiring are **not included**.
-Use the colleague's working integration and verified deployment configuration.
-The previews are not completed contract integrations.
+Use the colleague's working integration and verified deployment configuration for
+the token/NFT staking and swap previews.
+
+For the separate LEX/WCRO farm, [the LP farm handoff](docs/LP_FARM.md) covers the
+contract, verification, campaign funding, and website activation.
 
 ## Preview locally
 
@@ -53,6 +56,9 @@ because the site uses root-relative URLs.
 - `assets/site.css`: shared brand, navigation, footer and retained page styles.
 - `assets/pages.css`: swap, guide, staking, OG Pass, HuskyWorld and burn layouts.
 - `assets/site-ui.js`: local preview interactions only; no wallet calls.
+- `assets/lp-farm-config.js`: public farm deployment configuration.
+- `contracts/`: LP farm contract, tests, and deployment preflight. It is built
+  separately and can be excluded from the static site files.
 - `assets/burn-stats.js`: read-only supply/dead-wallet metrics every 60 seconds.
 - `assets/burn-history.js`: up to five transfers from the latest 50,000 confirmed
   blocks, checked every five minutes. This is a bounded recent scan, not an
@@ -60,16 +66,15 @@ because the site uses root-relative URLs.
 - Images are local; WebP copies are used for the new OG Pass and HuskyWorld art.
 - Google Fonts and public Cronos RPC endpoints are external dependencies.
 
-No secrets, contract source/deployments, Sites credentials/hosting identity or
-duplicate `dist/` output are included.
+The repository excludes secrets, Sites credentials/hosting identity, compiler
+output and duplicate `dist/` output.
 
 ## Source and validation
 
-Website files match Sites source commit
+The original website export matched Sites source commit
 `bd14d00f62a33571008b8e860d89b83c3d3d5693`, published as preview version 18.
-This GitHub export adds the integration documentation.
 
 The preview was checked on desktop and at 390px mobile width: migrated routes,
 internal links, images, menu stability, UI tabs and live burn metrics. JavaScript
-syntax checks passed. Transaction signing/staking was not tested because wallet
-integrations are not present. The removed archived project remains omitted.
+syntax checks passed. The LP farm contract and browser flows are tested separately
+using local test tokens.
