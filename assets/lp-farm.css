@@ -1,0 +1,118 @@
+.page-lp-farm [hidden] { display: none !important; }
+
+.farm-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 32px;
+}
+
+.farm-small {
+  margin: 0;
+  color: var(--muted);
+  font-size: .875rem;
+}
+
+.farm-wallet-state { margin-top: 16px; }
+.farm-wallet .button { padding: 9px 14px; font-size: .875rem; cursor: pointer; }
+.farm-wallet button:disabled {
+  color: #53647c;
+  background: #edf2f9;
+  border-color: #d0dbe9;
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+}
+
+.farm-balances {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 20px 0 0;
+}
+
+.farm-balances div {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding: 12px;
+  background: #f0f5fe;
+  border: 1px solid #dce8fa;
+  border-radius: 12px;
+}
+
+.farm-balances dt, .farm-schedule dt { font-size: .8125rem; color: var(--muted); }
+.farm-balances dd, .farm-schedule dd {
+  margin: 4px 0 0;
+  color: var(--navy);
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.farm-wallet .segmented { margin: 20px 0 16px; }
+.farm-wallet .stake-input { gap: 10px; }
+.farm-wallet .stake-input input { width: 100%; min-width: 0; }
+.farm-amount-note:not(:empty), .farm-tx:not(:empty) { margin-top: 10px; }
+
+.farm-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.farm-claim-actions, .farm-emergency {
+  border-top: 1px solid var(--line);
+  margin-top: 18px;
+  padding-top: 14px;
+}
+
+.farm-emergency summary { color: var(--navy); cursor: pointer; font-weight: 900; }
+.farm-emergency p { margin: 8px 0 12px; }
+
+.farm-info {
+  background: #e8f0fd;
+  border: 1px solid #cadbf4;
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.farm-info h2 { margin: 0; font-size: 26px; }
+.farm-info p { margin: 14px 0 0; color: #344a66; }
+.farm-info .status[data-state="planned"],
+.farm-info .status[data-state="unavailable"] {
+  background: #f4f6fa;
+  color: #465568;
+}
+.farm-info .status[data-state="active"] {
+  border-color: #a1c1ef;
+  background: var(--blue-dark);
+  color: #fff;
+}
+
+.farm-schedule { margin: 18px 0; }
+.farm-schedule div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: baseline;
+  gap: 8px;
+  padding-block: 9px;
+  border-bottom: 1px solid #cbdcf1;
+}
+.farm-schedule dd { margin: 0; text-align: end; }
+.farm-links { display: flex; flex-wrap: wrap; gap: 8px 18px; font-weight: 900; }
+.farm-guide .card { gap: 10px; }
+.farm-risk { margin-top: 14px; }
+
+@media (max-width: 860px) {
+  .farm-layout { grid-template-columns: 1fr; gap: 24px; }
+}
+
+@media (max-width: 420px) {
+  .page-lp-farm .staking-tabs { gap: 8px; }
+  .page-lp-farm .staking-tabs a { padding-inline: 11px; }
+  .farm-balances { gap: 6px; }
+  .farm-balances div { padding: 8px; }
+  .farm-wallet .button { padding-inline: 11px; }
+  .farm-info { padding: 18px; }
+}
